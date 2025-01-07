@@ -1,0 +1,262 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.1.1 (14/2/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the 
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times 
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt,fleqn]{book} % Default font size and left-justified equations
+
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%-------------------------------------------------------------------------------
+
+
+\begin{tikzpicture}[remember picture,overlay]
+%%%%%%%%%%%%%%%%%%%% Background %%%%%%%%%%%%%%%%%%%%%%%%
+\fill[BrickRed] (current page.south west) rectangle (current page.north east);
+
+
+\foreach \i in {2.5,...,22}
+{
+    \node[rounded corners,BrickRed!60,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] at ($(current page.west)+(2.5,-5)$) {} ;
+}
+
+%%%%%%%%%%%%%%%%%%%% Background Polygon %%%%%%%%%%%%%%%%%%%% 
+\foreach \i in {0.5,...,22}
+{
+\node[rounded corners,BrickRed!60,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] at ($(current page.north west)+(2.5,0)$) {} ;
+}
+
+\foreach \i in {0.5,...,22}
+{
+\node[rounded corners,BrickRed!90,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] at ($(current page.north east)+(0,-9.5)$) {} ;
+}
+
+
+\foreach \i in {21,...,6}
+{
+\node[BrickRed!85,rounded corners,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] at ($(current page.south east)+(-0.2,-0.45)$) {} ;
+}
+
+
+%%%%%%%%%%%%%%%%%%%% Title of the Report %%%%%%%%%%%%%%%%%%%% 
+\node[left,BrickRed!5,minimum width=0.625*\paperwidth,minimum height=3cm, rounded corners] at ($(current page.north east)+(-1,-9.825)$)
+{
+{\fontsize{25}{30} \selectfont \bfseries MACROECONOMÍA ESTÁNDAR}
+};
+
+%%%%%%%%%%%%%%%%%%%% Subtitle %%%%%%%%%%%%%%%%%%%% 
+\node[left,BrickRed!10,minimum width=0.625*\paperwidth,minimum height=2cm, rounded corners] at ($(current page.north east)+(-1,-11.3)$)
+{
+{\huge \textit{Un enfoque algebraico}}
+};
+
+%%%%%%%%%%%%%%%%%%%% Author Name %%%%%%%%%%%%%%%%%%%% 
+\node[left,BrickRed!5,minimum width=0.625*\paperwidth,minimum height=2cm, rounded corners] at ($(current page.north east)+(-1,-13.3)$)
+{
+{\Large \textsc{Eddy Lizarazu Alanez}}
+};
+
+%%%%%%%%%%%%%%%%%%%% Year %%%%%%%%%%%%%%%%%%%% 
+\node[rounded corners,fill=BrickRed!70,text =BrickRed!5,regular polygon,regular polygon sides=6, minimum size=2.5 cm,inner sep=0,ultra thick] at ($(current page.west)+(2.5,-5)$) {\LARGE \bfseries 2025};
+
+\end{tikzpicture}
+
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+
+\noindent Copyright \copyright\ 2025 Eddy Lizarazu\\ % Copyright notice
+
+\noindent \textsc{Published by UAM-Iztapalapa}\\ % Publisher
+
+\noindent \textsc{book-website.com}\\ % URL
+
+\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+
+\noindent \textit{Primera edición, 2025} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\usechapterimagefalse % If you don't want to include a chapter image, use this to toggle images off - it can be enabled later with \usechapterimagetrue
+
+\chapterimage{chapter_head_1.pdf} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+\tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------
+% Indice
+%----------------
+
+%----------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Macroeconomía IS-LM: Un enfoque algebraico
+%
+% PARTE I: Introduccion
+%   1.	Una panaorámica del libro
+%   2.  Indicares económicos y algunas idéntidades
+%
+% PARTE II: Macroeconomía IS-LM 
+%   3.  ⁠La macroeconomía IS-LM
+%   4.	El modelo IS-LM keynesiano
+%   5.	⁠El modelo IS-LM neoclásico 
+%    
+% PARTE III: Sector productivo
+%   6.	⁠El modelo neoclásico
+%   7.	⁠El modelo keynesiano
+%
+% PARTE IV: Macroeconomía abierta
+%   8.  El enfoque de elasticidades y absorción
+%   9.	El modelo MF
+%   10. El modelo AA-DD de Krugman
+%   11. El modelo monetario de economía abierta
+%
+% PARTE V: Introducción a la dinámica
+%   12. El impacto fiscal 
+%   13. Acumulación del capital
+%   14. ⁠El impacto monetario
+%   15. El ataque especulativo
+%   16. El modelo de sobrerreacción
+%   17: El modelo de la síntesis neoclásica
+%   
+%
+% PARTE VI: Macroeconmía neokeynesiana
+%
+%   18. Análisis estocástico
+%   19. ⁠ER y política económica
+%   20. El instrumento monetario
+%   21. ⁠Un modelo neokeynesiano de EE 
+%   22. ⁠Un modelo neokeynesiano de ER
+%
+%  APÉNDICES
+%   A. La dimensión temporal
+%   B. La indeterminación del nivel de precios
+%   C. El banco central y el modelo IS-PM
+%   D. Fijación de precios y el sector productivo
+%   E. Una extensión al modelo SN
+%   F. El modelo Barro-Gordon
+%   G. Fundamentos de las relaciones agregadas
+%   H. xxx
+
+
+\part{Macroeconomía IS-LM}
+
+%\input{chapters/chapter02/cha02.tex}
+\input{chapters/chapter03/cha03.tex}
+%\input{chapters/chapter04/cha04.tex}
+%\input{chapters/chapter05/cha05.tex}
+%\input{chapters/chapter08/cha08.tex}
+%\input{chapters/chapter10/cha10.tex}
+%\input{chapters/chapter11/cha11.tex}
+
+%\part{Otros modelos dinámicos}
+
+%\input{chapters/chapter12/cha12.tex}
+%\input{chapters/chapter13/cha13.tex}
+%\input{chapters/chapter14/cha14.tex}
+
+
+%\part{Expectativas y política económica}
+
+
+%\input{chapters/chapter15/cha15.tex}
+%\input{chapters/chapter16/cha16.tex}
+%\input{chapters/chapter17/cha17.tex}
+%\input{chapters/chapter18/cha18.tex}
+
+
+\part{Apéndices}
+
+\appendix
+\input{chapters/appendix/apen-A}
+%\input{chapters/appendix/apen-B}
+%\input{chapters/appendix/apen-C}
+
+
+\part{Bibliografía}
+
+\input{chapters/biblio/biblio}
+
+%-------%	BIBLIOGRAPHY
+
+%\chapter{Bibliografía}
+%\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliografía}}
+%\section*{Libros}
+%\addcontentsline{toc}{section}{Libros}
+%\printbibliography[heading=bibempty,type=book]
+%\section*{Artículos}
+%\addcontentsline{toc}{section}{Articulos}
+%\printbibliography[heading=bibempty,type=article]
+
+
+%\part*{Indice de palabras}
+
+%------------------------------------------------
+%	INDEX
+%------------------------------------------------
+
+%\cleardoublepage
+%\phantomsection
+%\setlength{\columnsep}{0.75cm}
+%\addcontentsline{toc}{chapter}{\textcolor{ocre}{Indice de palabras}}
+%\printindex
+
+\end{document}
